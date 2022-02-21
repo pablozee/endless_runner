@@ -33,5 +33,6 @@ public class EndTileTrigger : MonoBehaviour
     void SpawnNewTile()
     {
         Instantiate(tilePrefab, tileSpawnPoint.transform.position, Quaternion.identity);
+        Destroy(gameObject.transform.parent.gameObject, 6f);
     }
 }
