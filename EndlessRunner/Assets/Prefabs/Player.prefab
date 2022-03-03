@@ -1188,6 +1188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6556306465905306840}
+  - component: {fileID: 5240460230839523636}
   - component: {fileID: 6904096528491634354}
   - component: {fileID: 6734592845755800538}
   - component: {fileID: 6734592845755800540}
@@ -1216,6 +1217,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &5240460230839523636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5888312832848672354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 24b1432819274044390aa96e963ef573, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Game
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!95 &6904096528491634354
 Animator:
   serializedVersion: 3
@@ -1225,7 +1256,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5888312832848672354}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: c5a9d3ea546f275428b4095e73d42e85, type: 3}
   m_Controller: {fileID: 9100000, guid: 593d8caa117ff914f820d2de03ba3418, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -1277,7 +1308,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9eb17a1cb5cba64b82bba9a40d81799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  runSpeed: 25
+  sidewaysSpeed: 10
+  zMin: -10.88
+  zMax: -1.64
 --- !u!1 &5898407899453273832
 GameObject:
   m_ObjectHideFlags: 0

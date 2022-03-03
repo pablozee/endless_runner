@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MovePlayer : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float runSpeed;
+    [SerializeField] private float sidewaysSpeed;
+    [SerializeField] private float zMin;
+    [SerializeField] private float zMax;
+
+    private float movementValue;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +21,26 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+        transform.Translate(Vector3.forward * Time.deltaTime * runSpeed);
+        transform.Translate(Vector3.right * Time.deltaTime * movementValue * sidewaysSpeed);
+        if (transform.position.z < zMin)
+        {
+            Vector3 temporaryPosition = transform.position;
+            temporaryPosition.z = zMin;
+            transform.position = temporaryPosition;
+        }
+
+        if (transform.position.z > zMax)
+        {
+            Vector3 temporaryPosition = transform.position;
+            temporaryPosition.z = zMax;
+            transform.position = temporaryPosition;
+        }
+    }
+
+    void OnMove(InputValue value)
+    {
+        movementValue = value.Get<float>();
+        Debug.Log(movementValue);
     }
 }
