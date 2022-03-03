@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EndTileTrigger : MonoBehaviour
 {
+    [SerializeField] private MovePlayer movePlayer;
     [SerializeField] private GameObject tilePrefab;
     [SerializeField] private GameObject tileSpawnPoint;
+    [SerializeField] private float speedMultiplier = 1.03f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,10 @@ public class EndTileTrigger : MonoBehaviour
 
     void SpawnNewTile()
     {
-        Instantiate(tilePrefab, tileSpawnPoint.transform.position, Quaternion.identity);
+        GameObject newTile = Instantiate(tilePrefab, tileSpawnPoint.transform.position, Quaternion.identity);
+        newTile.name = "New Tile";
+        float newRunSpeed = movePlayer.GetRunSpeed() * speedMultiplier;
+        movePlayer.SetRunSpeed(newRunSpeed);
         Destroy(gameObject.transform.parent.gameObject, 6f);
     }
 }

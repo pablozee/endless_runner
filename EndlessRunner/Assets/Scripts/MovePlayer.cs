@@ -43,4 +43,14 @@ public class MovePlayer : MonoBehaviour
         movementValue = value.Get<float>();
         Debug.Log(movementValue);
     }
+
+    public float GetRunSpeed()
+    {
+        return runSpeed;
+    }
+
+    public void SetRunSpeed(float newValue)
+    {
+        runSpeed = newValue;
+    }
 }
