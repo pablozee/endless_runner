@@ -27,7 +27,6 @@ public class EndTileTrigger : MonoBehaviour
         if (movePlayer != null)
         {
             SpawnNewTile();
-            Debug.Log("Spawning new tile");
         }
     }
 
