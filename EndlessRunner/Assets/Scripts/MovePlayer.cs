@@ -21,8 +21,9 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * runSpeed);
-        transform.Translate(Vector3.right * Time.deltaTime * movementValue * sidewaysSpeed);
+         transform.Translate(Vector3.forward * Time.deltaTime * runSpeed);
+         transform.Translate(Vector3.right * Time.deltaTime * movementValue * sidewaysSpeed);
+
         if (transform.position.z < zMin)
         {
             Vector3 temporaryPosition = transform.position;
