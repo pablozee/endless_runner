@@ -9,6 +9,7 @@ public class ObstacleCollision : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             Debug.Log("Game over");
+            GameManager.Instance.SetIsAlive(false);
         }    
     }
 }
