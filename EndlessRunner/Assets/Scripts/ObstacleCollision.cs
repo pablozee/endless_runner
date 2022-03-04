@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ObstacleCollision : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class ObstacleCollision : MonoBehaviour
         {
             Debug.Log("Game over");
             GameManager.Instance.SetIsAlive(false);
+            SceneManager.LoadScene("GameScene");
         }    
     }
 }

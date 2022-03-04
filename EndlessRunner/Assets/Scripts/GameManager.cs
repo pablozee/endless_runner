@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private int scoreIncrement = 10;
+    [SerializeField] private int scoreMultiplier = 100;
 
     private bool isAlive;
     private float timerValue;
@@ -48,12 +49,12 @@ public class GameManager : MonoBehaviour
     {
         timerValue += Time.deltaTime;
         TimeSpan ts = TimeSpan.FromSeconds(timerValue);
-        timerText.text = "Time Elapsed: " + string.Format("{0:00}:{1:00}", ts.TotalMinutes, ts.Seconds);
+        timerText.text = "Time Elapsed: " + ts.ToString(@"mm\:ss\:fff");
     }
 
     void IncrementScore()
     {
-        scoreValue += Mathf.FloorToInt((scoreIncrement * Time.deltaTime));
+        scoreValue += Mathf.FloorToInt((scoreIncrement * Time.deltaTime) * scoreMultiplier);
         scoreText.text = scoreValue.ToString();
     }
 
