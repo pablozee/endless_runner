@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     void IncrementScore()
     {
         scoreValue += Mathf.FloorToInt((scoreIncrement * Time.deltaTime) * scoreMultiplier);
-        scoreText.text = scoreValue.ToString();
+        scoreText.text = "Score: " + scoreValue.ToString();
     }
 
     public bool GetIsAlive()
