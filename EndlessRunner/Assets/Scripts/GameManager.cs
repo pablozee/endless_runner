@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     void TickTimer()
     {
         timerValue += Time.deltaTime;
+        PlayerStatsManager.playerTimer = timerValue;
         TimeSpan ts = TimeSpan.FromSeconds(timerValue);
         timerText.text = "Time Elapsed: " + ts.ToString(@"mm\:ss\:fff");
     }
