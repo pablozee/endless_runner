@@ -10,7 +10,24 @@ public class ObstacleCollision : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             GameManager.Instance.SetIsAlive(false);
-            SceneManager.LoadScene("GameOver");
+
+
+            // Play collision audio to be implemented later
+            PlayerAudioController playerAudio = collision.gameObject.GetComponent<PlayerAudioController>();
+        //    playerAudio.PlayCollisionAudio();
+
+            AudioSource playerAudioSource = collision.gameObject.GetComponent<AudioSource>();
+            StartCoroutine(LoadSceneOnMusicComplete(playerAudioSource));
         }    
+    }
+
+    IEnumerator LoadSceneOnMusicComplete(AudioSource audioSource)
+    {
+        while (audioSource.isPlaying)
+        {
+            yield return null;
+        }
+
+        SceneManager.LoadScene("GameOver");
     }
 }
