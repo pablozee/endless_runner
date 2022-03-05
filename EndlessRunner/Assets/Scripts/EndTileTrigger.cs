@@ -6,6 +6,7 @@ public class EndTileTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject tilePrefab;
     [SerializeField] private GameObject tileSpawnPoint;
+    [SerializeField] private float speedMultiplier = 1.005f;
 
     void Start()
     {
@@ -25,6 +26,8 @@ public class EndTileTrigger : MonoBehaviour
         {
             SpawnNewTile();
         }
+
+        movePlayer.SetRunSpeed(movePlayer.GetRunSpeed() * speedMultiplier);
     }
 
     void SpawnNewTile()
