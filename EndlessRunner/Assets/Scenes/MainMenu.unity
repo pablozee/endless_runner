@@ -310,6 +310,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &239915323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 239915324}
+  - component: {fileID: 239915325}
+  m_Layer: 0
+  m_Name: Main Menu Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &239915324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239915323}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &239915325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239915323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95548bb5d81e22147aaecdb001465e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &379041775
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +574,7 @@ GameObject:
   - component: {fileID: 544175793}
   - component: {fileID: 544175792}
   m_Layer: 5
-  m_Name: Play Again Button (1)
+  m_Name: Quit Game Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -600,7 +643,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 544175793}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 239915325}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &544175793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,7 +707,7 @@ GameObject:
   - component: {fileID: 604964288}
   - component: {fileID: 604964287}
   m_Layer: 5
-  m_Name: Play Again Button
+  m_Name: Play Game Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -721,7 +776,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 604964288}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 239915325}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &604964288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1313,7 +1380,7 @@ GameObject:
   - component: {fileID: 1872066230}
   - component: {fileID: 1872066229}
   m_Layer: 5
-  m_Name: Score Text
+  m_Name: Title Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1753,6 +1820,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1500323018510323490, guid: 394892424b5ca5f4487efd677de121dd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1500323018622003547, guid: 394892424b5ca5f4487efd677de121dd, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1760,6 +1831,18 @@ PrefabInstance:
     - target: {fileID: 1500323018651125816, guid: 394892424b5ca5f4487efd677de121dd, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500323018764505897, guid: 394892424b5ca5f4487efd677de121dd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500323018764505898, guid: 394892424b5ca5f4487efd677de121dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500323018764505898, guid: 394892424b5ca5f4487efd677de121dd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 1500323018794533528, guid: 394892424b5ca5f4487efd677de121dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1935,9 +2018,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1500323020174580701, guid: 394892424b5ca5f4487efd677de121dd, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500323020174580702, guid: 394892424b5ca5f4487efd677de121dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500323020174580703, guid: 394892424b5ca5f4487efd677de121dd, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1500323020241087743, guid: 394892424b5ca5f4487efd677de121dd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500323020247629332, guid: 394892424b5ca5f4487efd677de121dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500323020247629339, guid: 394892424b5ca5f4487efd677de121dd, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
